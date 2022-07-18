@@ -4,6 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import './Header.scss';
 import Api from './Api';
 import { useAuthContext } from './AuthContext';
+//import { MusicNavbar } from './MusicNavbar';
 
 function Header() {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ function Header() {
     <nav className="header navbar navbar-expand-md navbar-light bg-light fixed-top">
       <div className="container">
         <Link className="navbar-brand" to="/">
-          Full Stack Starter
+          WANG's BEAT
         </Link>
         <button
           className="navbar-toggler"
@@ -49,7 +50,7 @@ function Header() {
           <ul className="navbar-nav flex-grow-1 mb-2 mb-md-0">
             <li className="nav-item active">
               <Link className="nav-link" aria-current="page" to="/">
-                Home
+                spacex
               </Link>
             </li>
             <div className="flex-grow-1 d-flex justify-content-end">

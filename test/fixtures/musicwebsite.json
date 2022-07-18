@@ -1,0 +1,22 @@
+[
+  {
+    "model": "MusicWebsite",
+    "data": {
+      "id": 1,
+      "Name": "Test fixture 1",
+      "Created": "This is test fixture 1 long text.",
+      "Pictures": "xxx",
+      "Audio": "xxx"
+    }
+  },
+  {
+    "model": "MusicWebsite",
+    "data": {
+      "id": 2,
+      "Name": "Test fixture 2",
+      "Created": "This is test fixture 2 long text.",
+      "Pictures": "xxx",
+      "Audio": "xxx"
+    }
+  }
+]
