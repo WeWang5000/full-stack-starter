@@ -9,7 +9,7 @@ const helpers = require('../helpers');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  const records = await models.MusicContainer.findAll();
+  const records = await models.musicwebsite.findAll();
   res.json(records.map((r) => r.toJSON()));
 });
 

@@ -6,7 +6,7 @@ const session = require('supertest-session');
 const helper = require('../../helper');
 const app = require('../../../app');
 
-describe('/api/MusicContainer', () => {
+describe('/api/musicwebsite', () => {
   let testSession;
 
   beforeEach(async () => {
