@@ -22,7 +22,7 @@ describe('models.MusicWebsite', () => {
       Audio: 'xxx',
     });
     assert.deepStrictEqual(MusicWebsite.id, null);
-    await MusicWebsite.save();
+    await MusicWebsite.save(); //save to data base, id will generate after it save
     assert(MusicWebsite.id);
 
     assert.deepStrictEqual(MusicWebsite.Name, 'San Jose');

@@ -1,16 +1,17 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-import './App.scss';
+import ItemForm from './ItemForm';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import { AuthContextProvider, AuthProtected } from './AuthContext';
+import Detail from './Detail';
 import Header from './Header';
 import Home from './Home';
-import Detail from './Detail';
 import Login from './Login';
+import MusicContainer from './MusicContainer';
 import PasswordRoutes from './Passwords/PasswordRoutes';
 import Register from './Register';
 import UserRoutes from './Users/UserRoutes';
-import MusicContainer from './MusicContainer';
+
+import './App.scss';
 
 function App() {
   return (
@@ -19,6 +20,22 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route
+            path="/detail/new"
+            element={
+              <AuthProtected isAdminRequired={true}>
+                <ItemForm />
+              </AuthProtected>
+            }
+          />
+          <Route
+            path="/detail/:id/edit"
+            element={
+              <AuthProtected isAdminRequired={true}>
+                <ItemForm />
+              </AuthProtected>
+            }
+          />
           <Route path="/detail/:id" element={<Detail />} />
           <Route path="/login" element={<Login />} />
           <Route path="/passwords/*" element={<PasswordRoutes />} />

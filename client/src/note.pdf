@@ -1,0 +1,2 @@
+fixture --- fake data used for testing
+assert.deepStrictEqual --- check if left hand is extractly equal to the  right handside

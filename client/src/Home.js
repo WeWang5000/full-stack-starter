@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
-import MusicContainer from './MusicContainer';
-import MusicBackground from './MusicBackground';
+import { Link } from 'react-router-dom';
+
+import { useAuthContext } from './AuthContext';
 import Detail from './Detail';
+import MusicBackground from './MusicBackground';
+import MusicContainer from './MusicContainer';
 
 function Home() {
+  const { user } = useAuthContext();
   const [item, setItems] = useState([]); //item is what you put in []
 
   useEffect(function () {
@@ -19,6 +23,13 @@ function Home() {
   return (
     <main className="container">
       <h1>Wang's Beat</h1>
+      {user?.isAdmin && (
+        <p>
+          <Link to="/detail/new" className="btn btn-primary">
+            New Item
+          </Link>
+        </p>
+      )}
       <div className="row">
         {/* <MusicBackground /> */}
         {item.map((item) => (
