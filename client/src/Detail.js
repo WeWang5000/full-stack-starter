@@ -12,7 +12,7 @@ function Detail() {
   useEffect(
     function () {
       if (id) {
-        fetch(`https://api.airtable.com/v0/apparv2j6EOOrgYaX/Table%201/recM1Mgty0JhZ5wou${id}?api_key=keyFqsLeVJmDj3HEX`)
+        fetch(`/api/musicwebsite/${id}`)
           .then((response) => response.json())
           .then((data) => setData(data));
       }
@@ -22,7 +22,7 @@ function Detail() {
 
   return (
     <main className="container">
-      <h1>{data?.fields?.Title}</h1>
+      <h1>{data?.Name}</h1>
       {user?.isAdmin && (
         <p>
           <Link to="edit" className="btn btn-primary">

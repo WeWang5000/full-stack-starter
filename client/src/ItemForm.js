@@ -7,14 +7,15 @@ function ItemForm() {
   const navigate = useNavigate();
   const { id } = useParams();
   const [data, setData] = useState({
-    Title: '',
-    Text: '',
-    AttachmentUrl: '',
+    Name: '',
+    Created: '',
+    Pictures: '',
+    Audio: '',
   });
 
   useEffect(() => {
     if (id) {
-      Api.items.get(id).then((response) => setData(response.data));
+      Api.musicwebsite.get(id).then((response) => setData(response.data));
     }
   }, [id]);
 
@@ -23,9 +24,9 @@ function ItemForm() {
     try {
       let response;
       if (id) {
-        response = await Api.items.update(id, data);
+        response = await Api.musicwebsite.update(id, data);
       } else {
-        response = await Api.items.create(data);
+        response = await Api.musicwebsite.create(data);
       }
       navigate(`/detail/${response.data.id}`);
     } catch (error) {
@@ -46,29 +47,28 @@ function ItemForm() {
           <h1>Item</h1>
           <form onSubmit={onSubmit}>
             <div className="mb-3">
-              <label className="form-label" htmlFor="Title">
-                Title
+              <label className="form-label" htmlFor="Name">
+                Name
               </label>
-              <input type="text" className="form-control" id="Title" name="Title" onChange={onChange} value={data.Title} />
+              <input type="text" className="form-control" id="Name" name="Name" onChange={onChange} value={data.Name} />
             </div>
             <div className="mb-3">
-              <label className="form-label" htmlFor="Text">
-                Text
+              <label className="form-label" htmlFor="Created">
+                Created
               </label>
-              <input type="text" className="form-control" id="Text" name="Text" onChange={onChange} value={data.Text} />
+              <input type="text" className="form-control" id="Created" name="Created" onChange={onChange} value={data.Created} />
             </div>
             <div className="mb-3">
-              <label className="form-label" htmlFor="AttachmentUrl">
-                Attachment URL
+              <label className="form-label" htmlFor="Pictures">
+                Pictures
               </label>
-              <input
-                type="text"
-                className="form-control"
-                id="AttachmentUrl"
-                name="AttachmentUrl"
-                onChange={onChange}
-                value={data.AttachmentUrl}
-              />
+              <input type="text" className="form-control" id="Pictures" name="Pictures" onChange={onChange} value={data.Pictures} />
+            </div>
+            <div className="mb-3">
+              <label className="form-label" htmlFor="Audio">
+                Audio
+              </label>
+              <input type="text" className="form-control" id="Audio" name="Audio" onChange={onChange} value={data.Audio} />
             </div>
             <button type="submit" className="btn btn-primary">
               Submit

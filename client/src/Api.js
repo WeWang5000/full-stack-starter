@@ -36,21 +36,21 @@ const Api = {
       return instance.post('/api/auth/register', data);
     },
   },
-  items: {
+  musicwebsite: {
     index() {
-      return instance.get('/api/items');
+      return instance.get('/api/musicwebsite');
     },
     get(id) {
-      return instance.get(`/api/items/${id}`);
+      return instance.get(`/api/musicwebsite/${id}`);
     },
     create(data) {
-      return instance.post('/api/items', data);
+      return instance.post('/api/musicwebsite', data);
     },
     update(id, data) {
-      return instance.patch(`/api/items/${id}`, data);
+      return instance.patch(`/api/musicwebsite/${id}`, data);
     },
     delete(id) {
-      return instance.delete(`/api/items/${id}`);
+      return instance.delete(`/api/musicwebsite/${id}`);
     },
   },
   passwords: {
